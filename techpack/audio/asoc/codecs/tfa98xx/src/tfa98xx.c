@@ -31,7 +31,7 @@
 #include <linux/debugfs.h>
 #include <linux/version.h>
 #include <linux/input.h>
-#include "config.h"
+// #include "config.h"
 #include "tfa98xx.h"
 #include "tfa.h"
 #include "tfa_dsp_fw.h"
