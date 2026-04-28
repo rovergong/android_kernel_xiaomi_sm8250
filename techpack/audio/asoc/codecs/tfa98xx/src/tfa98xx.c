@@ -44,9 +44,9 @@
 #define pr_err(fmt, args...) printk(KERN_ERR "[tfa9874] " pr_fmt(fmt), ##args)
 
 /* required for enum tfa9912_irq */
-#include "tfa98xx_tfafieldnames.h"
+#include "../inc/tfa98xx_tfafieldnames.h"
 
-#include "spk-id.h"
+#include "../inc/spk-id.h"
 
 #define TFA98XX_VERSION	TFA98XX_API_REV_STR
 
