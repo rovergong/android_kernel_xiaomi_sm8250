@@ -99,6 +99,7 @@ jobs:
         name: Kernel-${{ inputs.device }}-${{ inputs.script }}-${{ inputs.ksu && 'KSU' || 'NoKSU' }}-${{ github.run_number }}
         path: ./*.zip
         if-no-files-found: error
+        
 release:
     needs: build
     runs-on: ubuntu-latest
