@@ -99,3 +99,44 @@ jobs:
         name: Kernel-${{ inputs.device }}-${{ inputs.script }}-${{ inputs.ksu && 'KSU' || 'NoKSU' }}-${{ github.run_number }}
         path: ./*.zip
         if-no-files-found: error
+release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Short SHA
+        id: vars
+        run: |
+          echo "BUILD_DATE=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+          echo "TAG_NAME=v$(date +'%Y%m%d')-${GITHUB_SHA::8}" >> $GITHUB_OUTPUT
+          echo "SHA_SHORT=${GITHUB_SHA::8}" >> $GITHUB_OUTPUT
+
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: all_kernels
+          pattern: Kernel-artifacts-*
+          merge-multiple: true
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.vars.outputs.TAG_NAME }}
+          name: "APTKernel Build - ${{ steps.vars.outputs.BUILD_DATE }} (${{ steps.vars.outputs.SHA_SHORT }})"
+          body: |
+            ## 自动构建内核发布 / Automated Kernel Release
+            
+            - **构建日期 / Build Date:** ${{ steps.vars.outputs.BUILD_DATE }}
+            - **提交哈希 / Commit SHA:** `${{ steps.vars.outputs.SHA_SHORT }}`
+            - **功能详情 / Features Detail:** [README.md](https://github.com/AstideLabs/android_kernel_xiaomi_sm8250/blob/android16-aptusitu-new/README.md)
+            - **包含设备 / Devices:** `psyche, thyme, umi, munch, lmi, cmi, cas, apollo, alioth, elish, enuma, dagu, pipa`
+            
+            ### 更新内容 / What's Changed
+
+            - ***待补完 / Wait for writing***
+
+            ---
+            **分类指南 / Instruction:**
+            - **MIUI**: 适用于小米官方或基于小米官方修改的 ROM。
+            - **AOSP**: 适用于类原生 ROM。
+            - **ReSukiSU-SuSFS**: 已集成 ReSukiSU 和 SuSFS。
+          files: all_kernels/*.zip
