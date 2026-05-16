@@ -49,13 +49,29 @@ fi
 
 # Enable ccache for speed up compiling 
 export CCACHE_DIR="$HOME/.cache/ccache_mikernel" 
-export CC="ccache gcc"
-export CXX="ccache g++"
+export CC="clang"
+export CXX="clang++"
 export PATH="/usr/lib/ccache:$PATH"
+export CCACHE_COMPILERCHECK=content
+export CCACHE_SLOPPINESS=time_macros,include_file_mtime,include_file_ctime
 echo "CCACHE_DIR: [$CCACHE_DIR]"
 
 
-MAKE_ARGS="ARCH=arm64 SUBARCH=arm64 O=out CC=clang CROSS_COMPILE=aarch64-linux-gnu- CROSS_COMPILE_ARM32=arm-linux-gnueabi- CROSS_COMPILE_COMPAT=arm-linux-gnueabi- CLANG_TRIPLE=aarch64-linux-gnu-"
+MAKE_ARGS="ARCH=arm64 \
+           SUBARCH=arm64 \
+           O=out \
+           CC=\"ccache clang\" \
+           HOSTCC=\"ccache clang\" \
+           CLANG_TRIPLE=aarch64-linux-gnu- \
+           CROSS_COMPILE=aarch64-linux-gnu- \
+           CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
+           CROSS_COMPILE_COMPAT=arm-linux-gnueabi- \
+           LD=ld.lld \
+           AR=llvm-ar \
+           NM=llvm-nm \
+           OBJCOPY=llvm-objcopy \
+           OBJDUMP=llvm-objdump \
+           STRIP=llvm-strip"
 
 
 if [ "$1" == "j1" ]; then

@@ -272,6 +272,7 @@ static struct mount *susfs_alloc_non_unshare_ksu_vfsmnt(const char *name)
 		res = ida_alloc_min(&mnt_id_ida, DEFAULT_KSU_MNT_ID, GFP_KERNEL);
 		if (res < 0)
 			goto out_free_cache;
+
 		mnt->mnt_id = res;
 
 		if (name) {

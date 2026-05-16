@@ -37,7 +37,7 @@ This kernel stands on the shoulders of giants, combining contributions from mult
 **中文:**  
 本内核支持 [ReSukiSU](https://github.com/ReSukiSU/ReSukiSU)(基于 [SukiSU Ultra](https://github.com/SukiSU-Ultra/SukiSU-Ultra), 一个 KernelSU 的 fork，支持 KPM) & [SuSFS](https://gitlab.com/simonpunk/susfs4ksu)。请自行安装 ReSukiSU 的管理器。NoKernelSU 版本支持应用 Magisk 和 APatch(及他们的分支)。  
 
-**Release** 里的编译好的内核成品由 `android16-aptusitu-new` 分支编译，应当能在原版 MIUI/HyperOS 和第三方的基于 AOSP 的各种 Android11-16 的 ROM 上使用。欢迎大家尝试并反馈(提 Issue 或 Pull Requests)! 酷友们到 [这个帖子](https://www.coolapk.com/feed/67088487) 讨论或反馈，也可以加入 QQ 群，或者给我私信反馈!  
+**Release** 里的编译好的内核成品由 `android16-aptusitu-new` 分支编译，应当能在原版 MIUI/HyperOS 和第三方的基于 AOSP 的各种 Android11-16 的 ROM 上使用。欢迎大家尝试并反馈(提 Issue 或 Pull Requests)! 酷友们到 [这个帖子](https://www.coolapk.com/feed/69700122) 讨论或反馈，也可以加入 QQ 群，或者给我私信反馈!  
 
 以下是一些具体的功能:  
 1. 支持 USB 串口驱动(CH340/FTDI/PL2303/OTI6858/TI/SPCP8X5/QT2/UPD78F0730/CP210X)  
@@ -56,7 +56,7 @@ Please install the ReSukiSU Manager by yourself.
 The NoKernelSU version supports Magisk and APatch (and their forks).  
 
 The prebuilt kernel in the **Release** section is compiled from the `android16-aptusitu-new` branch, and should work on stock MIUI/HyperOS as well as third-party AOSP-based ROMs for Android 11–16.  
-Feedback is welcome (via Issues or Pull Requests)! Coolapk users can join the discussion in [this post](https://www.coolapk.com/feed/67088487), you can also join my QQ group, or send me private feedback.  
+Feedback is welcome (via Issues or Pull Requests)! Coolapk users can join the discussion in [this post](https://www.coolapk.com/feed/69700122), you can also join my QQ group, or send me private feedback.  
 
 Below are some of the key features:  
 1. Support for USB serial drivers (CH340 / FTDI / PL2303 / OTI6858 / TI / SPCP8X5 / QT2 / UPD78F0730 / CP210X)  
@@ -160,8 +160,8 @@ Join ApartTUSITU's QQ Group: [700675046](https://qm.qq.com/q/Md7nXA3Toa)。
    ```
    mkdir zyc-clang
    cd zyc-clang
-   wget https://github.com/ZyCromerZ/Clang/releases/download/15.0.7-20260507-release/Clang-15.0.7-20260507.tar.gz
-   tar -zxvf Clang-15.0.7-20260507.tar.gz
+   wget https://github.com/ZyCromerZ/Clang/releases/download/16.0.6-20260510-release/Clang-16.0.6-20260510.tar.gz
+   tar -zxvf Clang-16.0.6-20260510.tar.gz
    cd ..
    ```
 
@@ -211,8 +211,8 @@ Join ApartTUSITU's QQ Group: [700675046](https://qm.qq.com/q/Md7nXA3Toa)。
    ```
    mkdir zyc-clang
    cd zyc-clang
-   wget https://github.com/ZyCromerZ/Clang/releases/download/15.0.7-20260507-release/Clang-15.0.7-20260507.tar.gz
-   tar -zxvf Clang-15.0.7-20260507.tar.gz
+   wget https://github.com/ZyCromerZ/Clang/releases/download/16.0.6-20260510-release/Clang-16.0.6-20260510.tar.gz
+   tar -zxvf Clang-16.0.6-20260510.tar.gz
    cd ..
    ```
 

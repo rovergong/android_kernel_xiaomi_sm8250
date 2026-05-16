@@ -250,6 +250,8 @@ SECTIONS
 	. += SWAPPER_DIR_SIZE;
 	swapper_pg_end = .;
 
+	. = ALIGN(SZ_64K);
+
 	__pecoff_data_size = ABSOLUTE(. - __initdata_begin);
 	_end = .;
 
